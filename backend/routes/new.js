@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/new', function (req, res, next) {
-  res.render('new', { title: 'Express' });
+router.post('/new', (req, res) => {
+  res.send('Form submitted!');
 });
+
 module.exports = router;

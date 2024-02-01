@@ -18,5 +18,8 @@ const messages = [
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Mini-Message Board', messages: messages });
 });
+router.post('/new', function (req, res, next) {
+  res.render('new', { form });
+});
 
 module.exports = router;

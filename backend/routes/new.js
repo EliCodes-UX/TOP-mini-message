@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', function (req, res) {
-  res.render('new', {
-    title: 'Mini Messageboard',
-    heading: 'Add New Message:',
-  });
+/* GET new page.*/
+router.get('/new', function (req, res, next) {
+  res.render('new', { tite: 'Express' });
 });
 
 module.exports = router;

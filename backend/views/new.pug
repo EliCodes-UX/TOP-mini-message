@@ -1,11 +1,18 @@
 extends header
 
-block content
+block content 
+    h1= heading 
 
-form(method="post", action="/new")
+    form(action="/new", method="POST")
 
-input(type="text", name="text", placeholder="enter text")
+        p Author's Name:
+        input(type="text", name="authorName")
 
-input(type="text", name="user", placeholder="whats your name")
+        p Message:
+        input(type="text", name="messageText")
 
-  button(type="submit") add new message
+        p
+        button(type="submit") Submit!
+
+        p
+        a(href= "/") Home

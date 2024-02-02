@@ -14,18 +14,27 @@ const messages = [
   },
 ];
 
-/* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Mini-Message Board', messages: messages });
+  res.render('index', { title: 'Mini Messageboard', messages: messages });
 });
-router.get('/new', function (req, res, next) {
-  res.render('/new');
-});
-router.post('/new', function (req, res, next) {
-  const author = req.body.authorName;
-  const message = req.body.messageText;
 
-  message.push({ text: message, user: author, added: new Data() });
+router.get('/home', function (req, res, next) {
+  res.render('index', { title: 'Mini Messageboard', messages: messages });
+});
+
+router.post('/home', function (req, res, next) {
+  res.redirect('/new');
+});
+
+router.get('/new', function (req, res, next) {
+  res.render('new');
+});
+
+router.post('/new', function (req, res, next) {
+  const text = req.body.messageText;
+  const user = req.body.authorName;
+
+  messages.push({ text: text, user: user, added: new Date() });
   res.redirect('/');
 });
 

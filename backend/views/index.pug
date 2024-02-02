@@ -2,8 +2,8 @@ extends header
 
 block content
     each message in messages
-        h1= message.text
-        p= message.user 
+        h1= message.user
+        p= message.text 
         p= message.added
 
     a(href= "/new") Add New Message!

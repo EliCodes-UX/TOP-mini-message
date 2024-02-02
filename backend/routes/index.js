@@ -18,6 +18,9 @@ const messages = [
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Mini-Message Board', messages: messages });
 });
+router.get('/new', function (req, res, next) {
+  res.render('/new');
+});
 router.post('/new', function (req, res, next) {
   const author = req.body.authorName;
   const message = req.body.messageText;
